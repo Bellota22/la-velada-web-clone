@@ -1,0 +1,36 @@
+---
+import Noise from '@/components/Noise.astro';
+import '@fontsource-variable/jost';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro Basics" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<title>{title}</title>
+	</head>
+	<body>
+		<Noise />
+		<div class="max-w-6xl px-2 lg:px-10 pt-40 mx-auto">
+			<slot />
+		</div>
+	</body>
+</html>
+
+<style>
+	html {
+		font-family: "Jost Variable" system-ui, sans-serif;
+		background: #13151a;
+	}
+
+</style>
